@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <div class="front">
+            <h1>Contact</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="Edward Page.html">Home</a></li>
+                <li><a href="Coding.html">Coding Experiences</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Hobbies.html">Hobbies</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Send a Message</h2>
+        <!-- Message form -->
+        <form onsubmit="event.preventDefault(); sendMessage();">
+            <label for="userMessage">Your Message:</label><br>
+            <textarea id="userMessage" rows="5" cols="40" placeholder="Type your message here"></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <p id="messageStatus"></p> <!-- Status message after sending -->
+    </main>
+
+    <script>
+        function sendMessage() {
+            const message = document.getElementById('userMessage').value;
+
+            if (message.trim() === '') {
+                document.getElementById('messageStatus').innerText = 'Please enter a message!';
+            } else {
+                document.getElementById('messageStatus').innerText = 'Your message has been sent!';
+                // Clear the textbox after sending the message
+                document.getElementById('userMessage').value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
